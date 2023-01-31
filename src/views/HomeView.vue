@@ -1,6 +1,6 @@
 <script setup>
-import Gallary from "../components/Gallary.vue";
+import GallaryList from "../components/GallaryList.vue";
 </script>
 <template>
-  <Gallary />
+  <GallaryList />
 </template>
