@@ -7,7 +7,7 @@ const links = router.getRoutes();
 <template>
   <nav class="nav">
     <ul class="nav__list">
-      <li class="nav__item" v-for="link in links">
+      <li class="nav__item" v-for="link in links" :key="link">
         <RouterLink active-class="nav__link_active" class="nav__link" :to="link.path">{{
           link.name
         }}</RouterLink>

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   iconName: { type: String, required: true },
   height: { type: Number, required: true },
 });
