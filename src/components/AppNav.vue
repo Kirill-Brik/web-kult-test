@@ -31,15 +31,15 @@ const links = router.getRoutes();
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
-    color: #343030;
     text-decoration: none;
+    color: inherit;
 
     &:hover {
       color: #9f9f9f;
     }
 
     &:active {
-      color: #343030;
+      color: inherit;
     }
 
     &_active {

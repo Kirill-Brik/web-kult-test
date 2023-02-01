@@ -3,19 +3,14 @@ import { computed, ref } from "vue";
 import data from "@/assets/mock.json";
 
 export const useProductStore = defineStore("ProductStore", () => {
-  data.forEach((product) => {
-    product.isBuying = false;
-  });
   const products = ref(data);
+  const filter = ref({ name: "" });
 
-  const productsInBag = computed(() => {
-    return products.value.filter((product) => product.isBuying);
+  const searchByName = computed(() => {
+    return products.value.filter((product) =>
+      product.name.toLowerCase().startsWith(filter.value.name.toLowerCase())
+    );
   });
 
-  function changeBag(id) {
-    const product = products.value.find((product) => product.id === id);
-    product.isBuying = !product.isBuying;
-  }
-
-  return { products, productsInBag, changeBag };
+  return { products, filter, searchByName };
 });

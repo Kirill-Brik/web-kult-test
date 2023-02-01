@@ -1,21 +1,34 @@
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { ref, watch } from "vue";
 
 export const useBagStore = defineStore("BagStore", () => {
   const bag = ref([]);
 
-  const findProduct = computed((id) => {
-    return bag.value.findIndex(id);
-  });
+  const bagLocalStorage = localStorage.getItem("Bag");
+  if (bagLocalStorage) {
+    bag.value = JSON.parse(bagLocalStorage)._value;
+  }
 
-  function addProduct(id) {
-    bag.value.push(id);
+  function addProduct(product) {
+    bag.value.push(product);
   }
 
   function removeProduct(id) {
     const idx = bag.value.findIndex((product) => product.id === id);
-    console.log(idx);
+    bag.value.splice(idx, 1);
   }
 
-  return { bag, findProduct, addProduct, removeProduct };
+  function isProductInBag(id) {
+    const idx = bag.value.findIndex((product) => product.id === id);
+    return idx !== -1 ? true : false;
+  }
+  watch(
+    () => bag,
+    (state) => {
+      localStorage.setItem("Bag", JSON.stringify(state));
+    },
+    { deep: true }
+  );
+
+  return { bag, addProduct, removeProduct, isProductInBag };
 });

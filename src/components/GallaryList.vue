@@ -1,14 +1,22 @@
 <script setup>
 import ProductCard from "./ProductCard.vue";
+import { computed } from "vue";
 import { useProductStore } from "@/stores/productStore";
 
 const productStore = useProductStore();
+
+const productList = computed(() => {
+  return productStore.filter.name ? productStore.searchByName : productStore.products;
+});
+const titleText = computed(() => {
+  return productList.value.length > 0 ? "Картины эпохи Возрождения" : "К сожелению ничего не нашли";
+});
 </script>
 <template>
   <section class="gallary">
-    <h1 class="gallary__title">Картины эпохи Возрождения</h1>
+    <h1 class="gallary__title">{{ titleText }}</h1>
     <ul class="gallary__list">
-      <li class="gallary__item" v-for="product in productStore.products" :key="product.id">
+      <li class="gallary__item" v-for="product in productList" :key="product.id">
         <ProductCard :product="product" />
       </li>
     </ul>

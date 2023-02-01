@@ -1,17 +1,29 @@
 <script setup>
 import AppButton from "./AppButton.vue";
+
+import { useProductStore } from "../stores/productStore";
+import { ref } from "vue";
+
+const name = ref("");
+
+const productStore = useProductStore();
+
+function search(name) {
+  productStore.filter.name = name;
+}
 </script>
 <template>
-  <div class="search">
+  <form class="search" @submit.prevent="search(name)">
     <input
       class="search__field"
       type="search"
       name="header-search"
       id="header-search"
+      v-model="name"
       placeholder="Поиск по названию картины"
     />
     <AppButton class="search__button" type="submit">Найти</AppButton>
-  </div>
+  </form>
 </template>
 
 <style lang="scss" scoped>
@@ -28,6 +40,10 @@ import AppButton from "./AppButton.vue";
     color: #343030;
     border: 1px solid #e1e1e1;
     outline: none;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
 
     &::placeholder {
       color: #9f9f9f;

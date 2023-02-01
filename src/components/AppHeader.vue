@@ -2,9 +2,9 @@
 import AppNav from "./AppNav.vue";
 import AppSearch from "./AppSearch.vue";
 import AppIcon from "./AppIcon.vue";
-import { useProductStore } from "../stores/productStore";
+import { useBagStore } from "../stores/bagStore";
 
-const productStore = useProductStore();
+const bagStore = useBagStore();
 </script>
 
 <template>
@@ -14,8 +14,8 @@ const productStore = useProductStore();
       <AppNav class="header__nav" />
       <AppSearch class="header__search" />
       <button class="header__bag">
-        <AppIcon class="header__bag-icon" icon-name="bag" :height="28" />
-        <span class="header__bag-counter">{{ productStore.productsInBag.length || "" }}</span>
+        <AppIcon class="header__bag-icon" icon-name="bag" height="28px" />
+        <span class="header__bag-counter">{{ bagStore.bag.length || "" }}</span>
       </button>
     </div>
   </header>
@@ -42,8 +42,9 @@ const productStore = useProductStore();
   }
 
   &__nav {
-    margin: 0 48px;
     flex: 1 1 auto;
+    margin: 0 48px;
+    color: #343030;
   }
 
   &__search {

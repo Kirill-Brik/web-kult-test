@@ -2,12 +2,16 @@
 import AppImage from "./AppImage.vue";
 import AppButton from "./AppButton.vue";
 import AppIcon from "./AppIcon.vue";
-import { useProductStore } from "@/stores/productStore";
-import { computed } from "vue";
+import { useBagStore } from "../stores/bagStore";
+import { computed, ref } from "vue";
 
 const props = defineProps({
   product: { type: Object, required: true },
 });
+const bagStore = useBagStore();
+
+const load = ref(false);
+const inBag = ref(bagStore.isProductInBag(props.product.id));
 
 const priceFormated = computed(() => {
   const str = String(props.product.price);
@@ -15,7 +19,34 @@ const priceFormated = computed(() => {
   return str[0] + " " + substr + " $";
 });
 
-const productStore = useProductStore();
+async function buy() {
+  load.value = true;
+  const data = await fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then((res) => {
+      if (res.ok) return res.json();
+      else throw new Error(res.status);
+    })
+    .then((data) => {
+      let str = "Success:\n";
+      for (let key in data) {
+        str += `${key}: ${data[key]};\n`;
+      }
+      return str;
+    })
+    .catch((err) => {
+      return `Error:\n ${err.message}`;
+    })
+    .finally(() => {
+      load.value = false;
+    });
+  if (inBag.value) {
+    bagStore.removeProduct(props.product.id);
+  } else {
+    bagStore.addProduct(props.product);
+  }
+  inBag.value = !inBag.value;
+  alert(data);
+}
 </script>
 <template>
   <div class="card">
@@ -40,16 +71,12 @@ const productStore = useProductStore();
         <AppButton
           v-if="product.price"
           class="card__button"
-          :class="{ button_type_active: product.isBuying }"
-          @click="productStore.changeBag(product.id)"
+          :class="{ button_type_active: inBag }"
+          @click="buy"
+          :is-load="load"
         >
-          <AppIcon
-            v-if="product.isBuying"
-            class="card__button-icon"
-            icon-name="check"
-            :height="20"
-          />
-          {{ product.isBuying ? "Куплено" : "Купить" }}
+          <AppIcon v-if="inBag" class="card__button-icon" icon-name="check" height="20px" />
+          {{ inBag ? "Куплено" : "Купить" }}
         </AppButton>
       </div>
     </div>
