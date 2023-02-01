@@ -31,6 +31,12 @@ async function buy() {
       for (let key in data) {
         str += `${key}: ${data[key]};\n`;
       }
+      if (inBag.value) {
+        bagStore.removeProduct(props.product.id);
+      } else {
+        bagStore.addProduct(props.product);
+      }
+      inBag.value = !inBag.value;
       return str;
     })
     .catch((err) => {
@@ -39,12 +45,6 @@ async function buy() {
     .finally(() => {
       load.value = false;
     });
-  if (inBag.value) {
-    bagStore.removeProduct(props.product.id);
-  } else {
-    bagStore.addProduct(props.product);
-  }
-  inBag.value = !inBag.value;
   alert(data);
 }
 </script>
