@@ -36,7 +36,10 @@ async function buy() {
       } else {
         bagStore.addProduct(props.product);
       }
+<<<<<<< HEAD
       inBag.value = !inBag.value;
+=======
+>>>>>>> e02d8b18272d83cba4e4d036558a4bda4e9eb821
       return str;
     })
     .catch((err) => {
@@ -45,6 +48,10 @@ async function buy() {
     .finally(() => {
       load.value = false;
     });
+<<<<<<< HEAD
+=======
+  inBag.value = !inBag.value;
+>>>>>>> e02d8b18272d83cba4e4d036558a4bda4e9eb821
   alert(data);
 }
 </script>
