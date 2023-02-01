@@ -2,6 +2,9 @@
 import AppNav from "./AppNav.vue";
 import AppSearch from "./AppSearch.vue";
 import AppIcon from "./AppIcon.vue";
+import { useProductStore } from "../stores/productStore";
+
+const productStore = useProductStore();
 </script>
 
 <template>
@@ -10,8 +13,9 @@ import AppIcon from "./AppIcon.vue";
       <img class="header__logo" src="../assets/logo.png" alt="Логотип" />
       <AppNav class="header__nav" />
       <AppSearch class="header__search" />
-      <button class="header__bug">
-        <AppIcon class="header__icon" icon-name="bag" :height="28" />
+      <button class="header__bag">
+        <AppIcon class="header__bag-icon" icon-name="bag" :height="28" />
+        <span class="header__bag-counter">{{ productStore.productsInBag.length || "" }}</span>
       </button>
     </div>
   </header>
@@ -28,7 +32,7 @@ import AppIcon from "./AppIcon.vue";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 24px;
+    padding: 0 24px;
     width: 100%;
     max-width: 1216px;
   }
@@ -46,12 +50,30 @@ import AppIcon from "./AppIcon.vue";
     margin: 0 33px;
   }
 
-  &__bug {
+  &__bag {
+    position: relative;
     margin: 0;
     padding: 0;
     border: none;
     background: transparent;
     cursor: pointer;
+  }
+
+  &__bag-counter {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 24px;
+    padding: 0 4px;
+    min-width: 15px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: white;
+    background-color: #403432;
+    border-radius: 15px;
   }
 }
 </style>

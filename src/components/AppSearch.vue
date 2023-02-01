@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import AppButton from "./AppButton.vue";
+</script>
 <template>
   <div class="search">
     <input
@@ -8,7 +10,7 @@
       id="header-search"
       placeholder="Поиск по названию картины"
     />
-    <button class="search__button" type="submit">Найти</button>
+    <AppButton class="search__button" type="submit">Найти</AppButton>
   </div>
 </template>
 
@@ -34,14 +36,6 @@
 
   &__button {
     padding: 13px 36px 14px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 150%;
-    color: white;
-    background: #403432;
-    border: none;
-    cursor: pointer;
   }
 }
 </style>

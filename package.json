@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.15",
     "@fontsource/merriweather": "^4.5.14",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.29",

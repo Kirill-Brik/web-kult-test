@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "name": "Рождение Венеры",
+    "author": "Сандро Боттичелли",
+    "price": 1000000,
+    "noDiscount": 2000000,
+    "imgUrl": "https://s3-alpha-sig.figma.com/img/93cb/4e09/db0eab48a6f2d11e9078fbb3d371082c?Expires=1676246400&Signature=INRl8bHTCYWDt3MtaXiCowOtr70m462UpAjnSvHeoAUHstXRLCiRSw1aL7Z-9HyDNT4oyU73WohFkFMfo55XYdjQyAc8hQsdRr~E1xIjyPoXsEfiNHKC0b49rF2IZoUAKKrZQc28bGb1kSJWRjkgKRmMym3wUJ0C4XOBgWMk01dAa0URo0lXLbOAdOzZpVWqCp2Fz6otrwvgThVSOuZTIS6Bzijx-2Zdko5xrn-PKcsQZKzzfGtDs7Fi8f6fD6CGIRM8~wYyd73vFPCNoUpxJR4kI~7DxDc5uqvqsCwdKtb2jnumtHfc1tidlEX7VKmtBWzs6zJuwB~zyBsAehhOZA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+  },
+  {
+    "id": 1,
+    "name": "Тайная вечеря",
+    "author": "Леонардо да Винчи",
+    "price": 3000000,
+    "imgUrl": "https://s3-alpha-sig.figma.com/img/f59b/7155/0aac165474911d5d44bf154381a23c80?Expires=1676246400&Signature=KTCcld-t4r0hnRyaQrfpcwFVdYRTdpIN7hj5Flme7-98NpsDYZHSHkTsYhZPDa-ewWqVcLJnLMrZnLW7zRMzbMzZ8dynz0wIp2QdymkBVJu13fsSP1~1-hAzzSLza-5-dm7hbaBQ0Iwagtry8FhphYduO0bQ7zOyCc75iZ5o-v0DbSyTUJJQw5ijd6S0F~5oZa5xY6P3qcAvXuYpQ462J0Sh18-f5Ox8iSh0h6q2YZJo~fXnyPUpGx2YueQH9Vp2Hfvw9u7iRZH5AhFAI38QwfZYuetq4ibK6Ed3kik03eK0uaIdXmSJN~dPvD2A7SX8ggfQfltBjiv-MCgkghLuWw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+  },
+  {
+    "id": 2,
+    "name": "Сотворение Адама",
+    "author": "Микеланджело",
+    "price": 5000000,
+    "noDiscount": 6000000,
+    "imgUrl": "https://s3-alpha-sig.figma.com/img/2ce5/b541/ab91452b4e8213fca3280a88a317496c?Expires=1676246400&Signature=gLx5dtRdzkfFA9-Qw8njXc~jPKx9X92~ZxzpH~WqjFINde-2rZL9-yRxK5AsDiJBaapHcp5S7KmpkpmkcRpgJ1IBWalGjPd2StQdIndpUXodq27KxkK49eLn2d23CIE5lSR9yyMJP19ObbxSp9j6AmCKEw4mLRpbB6ecC779SZBYIeZDTf44brfhSGRrAe3URabQ-ofgXyADgqKNNwBoRSUMzSEROhWuGTZ6faF~lFIjoVQCAkwsvxV0XWf8ipoLjqkBVDUmxFw87Vg-ndmd4MFbmRIMU4gGanO6s7uIneaQc5SJf6CBNWogm-BLiu7OvShmek1UVVso3~rwN0zxdQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+  },
+  {
+    "id": 3,
+    "name": "Урок анатомии",
+    "author": "Рембрандт",
+    "imgUrl": "https://s3-alpha-sig.figma.com/img/c258/18a5/1e889515a6516c3d8f8657bce639a5ec?Expires=1676246400&Signature=DnOdvP-lOfTURDf7CrgflZCXeLXHjm0rdhbVCJ9rbV618GKR2mxAAEVeoG2HuzN7LCXV1Q2hm3pIuZ4n~S6dZYAkDzx3D6EXYJvr-1d57KGUbNzmFGCmSdj0GHIUv~jdcv1q6F1w5F-boix3cDh~n6G4C~FU44Vq9DpDC5zutONCE0Sdx8pNaq44YZ6caIgTdnoZfoXpKhB6HnmrRJh2NSCEejfqgp~VP4lr3CaZp14j64IesXAoVrs9Jh6GAEoYGM4IbeAhqC3Ws98P83wSmfPOE3vutKt8G~Jpmqbyo3nktzbI3OIun~sEH4iK-kQvicLcQQ6FGdNtsHmkl-TKzA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+  }
+]

@@ -1,13 +1,13 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import router from "../router";
+import router from "@/router";
 
 const links = router.getRoutes();
 </script>
 <template>
   <nav class="nav">
     <ul class="nav__list">
-      <li class="nav__item" v-for="link in links" :key="link">
+      <li class="nav__item" v-for="link in links" :key="link.path">
         <RouterLink active-class="nav__link_active" class="nav__link" :to="link.path">{{
           link.name
         }}</RouterLink>
