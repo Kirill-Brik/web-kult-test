@@ -49,7 +49,7 @@ async function buy() {
 }
 </script>
 <template>
-  <div class="card">
+  <div class="card" :class="{ card_disabled: !product.price }">
     <AppImage
       class="card__image"
       :src="product.imgUrl"
@@ -90,6 +90,10 @@ async function buy() {
 
   height: 100%;
   border: 1px solid #e1e1e1;
+
+  &_disabled {
+    opacity: 0.5;
+  }
 
   &__image {
     border-bottom: 1px solid #e7e7e7;
